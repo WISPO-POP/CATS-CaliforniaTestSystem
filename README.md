@@ -40,12 +40,6 @@ Key files and folders of this repository are highlighted below.
 
 * **cal_largest_grid.m** -- MATPOWER file of the largest connected grid
 
-## Roadmap
-
-- Add renewable generation scenarios
-- Revisit load assignment
-- Convert MATLAB code to Julia
-
 See the [open issues](https://github.com/WISPO-POP/WildfireMapData/issues) for a full list of proposed features (and known issues).
 
 <!-- LICENSE -->
