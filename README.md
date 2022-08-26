@@ -1,7 +1,3 @@
-# SyntheticCaliforniaGrid
-A geographically-accurate synthetic electric grid located in California.
-
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
