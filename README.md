@@ -6,7 +6,7 @@ A geographically-accurate synthetic electric grid located in California.
 <br />
 <div align="center">
   <a href="https://github.com/WISPO-POP/SyntheticCaliforniaGrid">
-    <img src="docs/src/assets/logo.png" alt="Logo" width="300" height="300">
+    <img src="logo.png" alt="Logo" width="300" height="300">
   </a>
 
 <h3 align="center">Synthetic California Grid</h3>
