@@ -1,26 +1,26 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/WISPO-POP/SyntheticCaliforniaGrid">
+  <a href="https://github.com/WISPO-POP/CATS-CaliforniaTestSystem">
     <img src="logo.png" alt="Logo" width="300" height="300">
   </a>
 
-<h3 align="center">Synthetic California Grid</h3>
+<h3 align="center">CATS - California Test System</h3>
 
   <p align="center">
     A geographically-accurate synthetic grid in California.
     <!-- <br /> -->
-    <!-- <a href="https://github.com/WISPO-POP/SyntheticCaliforniaGrid"><strong>View Documentation »</strong></a> -->
+    <!-- <a href="https://github.com/WISPO-POP/CATS-CaliforniaTestSystem"><strong>View Documentation »</strong></a> -->
     <!-- <br /> -->
     <br />
-    <a href="https://github.com/WISPO-POP/SyntheticCaliforniaGrid/issues">Report Bug</a>
+    <a href="https://github.com/WISPO-POP/CATS-CaliforniaTestSystem/issues">Report Bug</a>
     ·
-    <a href="https://github.com/WISPO-POP/SyntheticCaliforniaGrid/issues">Request Feature</a>
+    <a href="https://github.com/WISPO-POP/CATS-CaliforniaTestSystem/issues">Request Feature</a>
   </p>
 </div>
 
 
-Project Link: [https://github.com/WISPO-POP/SyntheticCaliforniaGrid](https://github.com/WISPO-POP/SyntheticCaliforniaGrid)
+Project Link: [https://github.com/WISPO-POP/SyntheticCaliforniaGrid](https://github.com/WISPO-POP/CATS-CaliforniaTestSystem)
 
 Additional data link: [https://tinyurl.com/SyntheticCaliforniaGridData](https://drive.google.com/drive/folders/1Zo6ZeZ1OSjHCOWZybbTd6PgO4DQFs8_K?usp=sharing)
 
@@ -32,7 +32,7 @@ We also provide the load and renewable generation profiles that we used in the c
 ## Usage
 Clone the repository
 ```julia
-   git clone https://github.com/WISPO-POP/SyntheticCaliforniaGrid.git
+   git clone https://github.com/WISPO-POP/CATS-CaliforniaTestSystem.git
 ```
 
 Run a DC optimal power flow by executing the file `run_opf.jl`.
