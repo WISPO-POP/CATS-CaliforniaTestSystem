@@ -45,7 +45,7 @@ If you use this repository, please cite our publication:
 Key files and folders of this repository are highlighted below.
 
 * **MATPOWER** -- folder that contains the MATPOWER version of the grid
-  * **cal_grid.m** -- MATPOWER file of the Synthetic California Grid
+  * **CaliforniaTestSystem.m** -- MATPOWER file of the Synthetic California Grid
 * **GIS** -- folder that contains the GIS version of the grid 
   * **lines.geojson** -- GEOJSON file of the transmission lines (modified from the CEC version)
   * **substations.geojson** -- GEOJSON file of the substations (modified from the CEC version)

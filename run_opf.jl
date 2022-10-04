@@ -29,7 +29,7 @@ solver = Ipopt.Optimizer # JuMP.optimizer_with_attributes(() -> Ipopt.Optimizer(
 # Load Data
 # ---------
 # Load the MATPOWER data file
-data = PowerModels.parse_file("Final_Grid/updated models/cal_grid_acpf_v4.m")
+data = PowerModels.parse_file("MATPOWER/CaliforniaTestSystem.m")
 
 ###########
 ## Solve ##
