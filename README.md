@@ -39,7 +39,17 @@ Run a DC optimal power flow by executing the file `run_opf.jl`.
 
 ## Citation
 If you use this repository, please cite our publication:
-```Reference will be added soon.```
+```
+@misc{CATS2022,
+  doi = {10.48550/ARXIV.2210.04351},
+  url = {https://arxiv.org/abs/2210.04351},
+  author = {Taylor, Sofia and Rangarajan, Aditya and Rhodes, Noah and Snodgrass, Jonathan and Lesieutre, Bernie and Roald, Line A.},
+  title = {California Test System (CATS): A Geographically Accurate Test System based on the California Grid},
+  publisher = {arXiv},
+  year = {2022},
+  copyright = {arXiv.org perpetual, non-exclusive license}
+}
+```
 
 ## Contents of this repository
 Key files and folders of this repository are highlighted below.
