@@ -40,29 +40,29 @@ Clone the repository
 Run a DC optimal power flow using [PowerModels.jl](https://github.com/lanl-ansi/PowerModels.jl) by executing the file `run_opf.jl`.
 
 ### Indexing between MATPOWER and GIS data
-Due to formatting restrictions, the MATPOWER and GIS formats of the CATS model have different indices for components. The CSV files in the **Additional Data Files** folder map this relationship, in addition to providing additional data fields. 
+Due to formatting restrictions, the MATPOWER and GIS formats of the CATS model have different indices for components. The CSV files in the `Additional Data Files` folder map this relationship, in addition to providing additional data fields. 
 
-In **branch_data.csv**, "Branch Number" is the MATPOWER index in **CaliforniaTestSystem.m**, while "FID" is the GIS index in **lines.geojson**.
+In `branch_data.csv`, "Branch Number" is the MATPOWER index in `CaliforniaTestSystem.m`, while "FID" is the GIS index in `lines.geojson`.
 
-In **bus_data.csv**, "Bus number" is the MATPOWER index in **CaliforniaTestSystem.m**, while "FID" is the GIS index in **added_nodes.geojson** and **substations.geojson**.
+In `bus_data.csv`, "Bus number" is the MATPOWER index in `CaliforniaTestSystem.m`, while "FID" is the GIS index in `added_nodes.geojson` and `substations.geojson`. Note: An identifier to distinguish between substations and added nodes will be added to `bus_data.csv` soon.
 
-In **gen_data.csv**, "Generator number" and "Bus number" are the MATPOWER indices in **CaliforniaTestSystem.m**, while PlantCode and GenId identify generators in **EIA_Generator_Y2019.csv**.
+In `gen_data.csv`, "Generator number" and "Bus number" are the MATPOWER indices in `CaliforniaTestSystem.m`, while PlantCode and GenId identify generators in `EIA_Generator_Y2019.csv`.
 
 ## Contents of this repository
-Key files and folders of this repository are highlighted below.
+Key files and folders of this repository are described below.
 
-* **MATPOWER** -- folder that contains the MATPOWER version of the grid
-  * **CaliforniaTestSystem.m** -- MATPOWER file of the Synthetic California Grid
-* **GIS** -- folder that contains the GIS version of the grid 
-  * **lines.geojson** -- GEOJSON file of the transmission lines (modified from the CEC version)
-  * **substations.geojson** -- GEOJSON file of the substations (modified from the CEC version)
-  * **added_nodes.geojson** -- GEOJSON file of the nodes added to the system for connectivity
-  * **EIA_Generator_Y2019.csv** -- CSV files of the generators (unmodified from EIA), contains geographic coordinates
-* **Additional Data Files** -- folder that contains additional component data. Includes IDs to map between GIS and MATPOWER files.
-  * **branch_data.csv** -- CSV file of additional branch data
-  * **bus_data.csv** -- CSV file of additional bus data
-  * **gen_data.csv** -- CSV file of additional generator data
-* **run_opf.jl** -- Julia script to run a DC optimal power flow analysis of the grid
+* `MATPOWER` -- folder that contains the MATPOWER version of the grid
+  * `CaliforniaTestSystem.m` -- MATPOWER file of the Synthetic California Grid
+* `GIS` -- folder that contains the GIS version of the grid 
+  * `lines.geojson` -- GEOJSON file of the transmission lines (modified from the CEC version)
+  * `substations.geojson` -- GEOJSON file of the substations (modified from the CEC version)
+  * `added_nodes.geojson` -- GEOJSON file of the nodes added to the system for connectivity
+  * `EIA_Generator_Y2019.csv` -- CSV files of the generators (unmodified from EIA), contains geographic coordinates
+* `Additional Data Files` -- folder that contains additional component data. Includes IDs to map between GIS and MATPOWER files.
+  * `branch_data.csv` -- CSV file of additional branch data
+  * `bus_data.csv` -- CSV file of additional bus data
+  * `gen_data.csv` -- CSV file of additional generator data
+* `run_opf.jl` -- Julia script to run a DC optimal power flow analysis of the grid
 
 ## Citation
 If you use this repository, please cite our publication:
