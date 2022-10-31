@@ -22,7 +22,7 @@
 
 Project Link: [https://github.com/WISPO-POP/SyntheticCaliforniaGrid](https://github.com/WISPO-POP/CATS-CaliforniaTestSystem)
 
-Additional data link: [https://tinyurl.com/SyntheticCaliforniaGridData](https://drive.google.com/drive/folders/1Zo6ZeZ1OSjHCOWZybbTd6PgO4DQFs8_K?usp=sharing)
+Time-series data (load and renewable generation) link: [https://tinyurl.com/SyntheticCaliforniaGridData](https://drive.google.com/drive/folders/1Zo6ZeZ1OSjHCOWZybbTd6PgO4DQFs8_K?usp=sharing)
 
 ## Description
 This repository contains the data files of a geographically-accurate synthetic grid that is located in California. This grid was created using publicly available geographic data of California's actual transmission lines, substations, and power plants, which we combined with invented connections and parameters that are "realistic but not real".
@@ -61,6 +61,10 @@ Key files and folders of this repository are highlighted below.
   * **substations.geojson** -- GEOJSON file of the substations (modified from the CEC version)
   * **added_nodes.geojson** -- GEOJSON file of the nodes added to the system for connectivity
   * **EIA_Generator_Y2019.csv** -- CSV files of the generators (unmodified from EIA), contains geographic coordinates
+* **Additional Data Files** -- folder that contains additional component data. Includes IDs to map between GIS and MATPOWER files.
+  * **branch_data.csv** -- CSV file of additional branch data
+  * **bus_data.csv** -- CSV file of additional bus data
+  * **gen_data.csv** -- CSV file of additional generator data
 * **run_opf.jl** -- Julia script to run a DC optimal power flow analysis of the grid
 
 See the [open issues](https://github.com/WISPO-POP/WildfireMapData/issues) for a full list of proposed features (and known issues).
