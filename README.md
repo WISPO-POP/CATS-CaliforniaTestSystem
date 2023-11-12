@@ -39,16 +39,17 @@ Clone the repository
 
 Run a DC optimal power flow using [PowerModels.jl](https://github.com/lanl-ansi/PowerModels.jl) by executing the file `run_opf.jl`.
 
-### Indexing between MATPOWER and GIS data
-Due to formatting restrictions, the MATPOWER and GIS formats of the CATS model have different indices for components. The CSV files in the `Additional Data Files` folder map this relationship, in addition to providing additional data fields. 
+### Recent Updates
+The CATS was updated on November 11, 2023. All previous versions are available in the 'Archive' directory.
+<!-- Due to formatting restrictions, the MATPOWER and GIS formats of the CATS model have different indices for components. The CSV files in the `Additional Data Files` folder map this relationship, in addition to providing additional data fields. 
 
 In `branch_data.csv`, "Branch Number" is the MATPOWER index in `CaliforniaTestSystem.m`, while "FID" is the GIS index in `lines.geojson`. WARNING: There is currently an issue with the ID mapping in `branch_data.csv`. This issue should be resolved soon. Thank you for your patience.
 
 In `bus_data.csv`, "Bus number" is the MATPOWER index in `CaliforniaTestSystem.m`, while "FID" is the GIS index in `added_nodes.geojson` and `substations.geojson`. Note: An identifier to distinguish between substations and added nodes will be added to `bus_data.csv` soon. Note: In the network creation process, not all buses are included in the largest connected grid. Therefore, there are some buses that are present in the GIS data, but are not included in the MATPOWER version of CATS.
 
-In `gen_data.csv`, "Generator number" and "Bus number" are the MATPOWER indices in `CaliforniaTestSystem.m`, while PlantCode and GenId identify generators in `EIA_Generator_Y2019.csv`. Note: In the network creation process, not all generators are included in the largest connected grid. Therefore, there are some generators that are present in the data from the EIA-860, but are not included in the MATPOWER version of CATS.
+In `gen_data.csv`, "Generator number" and "Bus number" are the MATPOWER indices in `CaliforniaTestSystem.m`, while PlantCode and GenId identify generators in `EIA_Generator_Y2019.csv`. Note: In the network creation process, not all generators are included in the largest connected grid. Therefore, there are some generators that are present in the data from the EIA-860, but are not included in the MATPOWER version of CATS. -->
 
-## Contents of this repository
+<!-- ## Contents of this repository
 Key files and folders of this repository are described below.
 
 * `MATPOWER` -- folder that contains the MATPOWER version of the grid
@@ -62,7 +63,7 @@ Key files and folders of this repository are described below.
   * `branch_data.csv` -- CSV file of additional branch data
   * `bus_data.csv` -- CSV file of additional bus data
   * `gen_data.csv` -- CSV file of additional generator data
-* `run_opf.jl` -- Julia script to run a DC optimal power flow analysis of the grid
+* `run_opf.jl` -- Julia script to run a DC optimal power flow analysis of the grid -->
 
 ## Citation
 If you use this repository, please cite our publication:
