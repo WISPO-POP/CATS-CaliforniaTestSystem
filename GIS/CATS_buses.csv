@@ -1,4 +1,4 @@
-bus_i, kV,Type,Import,Lat,Lon
+bus_i,kV,Type,Import,Lat,Lon
 1,115,'Substation',' ',37.77243572,-122.2429162
 2,66,'Substation',' ',37.77848161,-121.6259513
 3,66,'Substation',' ',37.7483765,-121.6772083
