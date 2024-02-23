@@ -3,10 +3,7 @@ using JuMP
 using CSV, JSON
 using DataFrames
 using Gurobi, Ipopt
-using PyPlot
 
-
-path = "D:/CalGrid Evaluation"
 #println(Threads.nthreads())
 # User input
 save_to_JSON = true
@@ -19,20 +16,15 @@ N = 8760
 # solver = JuMP.optimizer_with_attributes(() -> Gurobi.Optimizer(GUROBI_ENV), "OutputFlag" => 1)
 
 # const IPOPT_ENV = Ipopt.Env()
-solver = Ipopt.Optimizer #JuMP.optimizer_with_attributes(() -> Ipopt.Optimizer(), "print_level" => 1) 
- 
-include("$(path)/test_eval_functions.jl")
-load_scenarios = CSV.read("$(path)/Load_Agg_Post_Assignment_corrected_cc.csv",header = false, DataFrame)
+solver = Ipopt.Optimizer #JuMP.optimizer_with_attributes(() -> Ipopt.Optimizer(), "print_level" => 1)
+
+include("test_eval_functions.jl")
+load_scenarios = CSV.read("../data/Load_Agg_Post_Assignment_v3_latest.csv",header = false, DataFrame)
 load_scenarios = load_scenarios[:,1:N]
 
+NetworkData = PowerModels.parse_file("../MATPOWER/CaliforniaTestSystem.m")
 
-NetworkData = PowerModels.parse_file("$(path)/cal_grid_acf_dcopf_corrected_cc.m")
-
-for (i,g) in NetworkData["gen"]
-    g["pmin"] = 0
-end
-
-gen_data = CSV.read("$(path)/gen_data_corrected_cc.csv",DataFrame)
+gen_data = CSV.read("../GIS/CATS_gens.csv",DataFrame)
 
 PMaxOG = [NetworkData["gen"][string(i)]["pmax"] for i in 1:size(gen_data)[1]]
 println(sum(PMaxOG))
@@ -45,8 +37,7 @@ WindCap = sum(g["pmax"] for (i,g) in NetworkData["gen"] if g["index"] in WindGen
 
 load_mapping = map_buses_to_loads(NetworkData)
 
-
-HourlyData2019 = CSV.read("$(path)/HourlyProduction2019.csv",DataFrame)
+HourlyData2019 = CSV.read("../data/HourlyProduction2019.csv",DataFrame)
 SolarGeneration = HourlyData2019[1:N,"Solar"]
 WindGeneration = HourlyData2019[1:N,"Wind"]
 
@@ -54,7 +45,7 @@ WindGeneration = HourlyData2019[1:N,"Wind"]
 results = []
 
 @time begin
-    #Threads.@threads 
+    #Threads.@threads
     for k = 8649:N
         #println("k = $k on thread $(Threads.threadid())")
         println(k)
@@ -71,14 +62,14 @@ results = []
 
         #Save solution dictionary to JSON
         if save_to_JSON == true
-           export_JSON(solution, k,"$(path)/ACOPF Solution")
+           export_JSON(solution, k, "solutions")
         end
         push!(results,  solution["termination_status"])
     end
 end
 
 if save_summary == true
-    CSV.write(results, "$(path)/eval_results.csv")
+    CSV.write(results, "eval_results.csv")
 end
 
 j=0
