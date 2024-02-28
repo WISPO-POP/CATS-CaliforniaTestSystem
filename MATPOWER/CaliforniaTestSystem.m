@@ -1,5 +1,5 @@
 %% MATPOWER Case Format : Version 2
-function mpc = cal_grid_dcopf_v2
+function mpc = CaliforniaTestSystem
 mpc.version = '2';
 
 %%-----  Power Flow Data  -----%%
