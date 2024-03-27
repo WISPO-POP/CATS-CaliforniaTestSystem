@@ -25,7 +25,7 @@ Project Link: [https://github.com/WISPO-POP/SyntheticCaliforniaGrid](https://git
 Time-series data (load and renewable generation) link: [https://tinyurl.com/SyntheticCaliforniaGridData](https://drive.google.com/drive/folders/1Zo6ZeZ1OSjHCOWZybbTd6PgO4DQFs8_K?usp=sharing)
 
 ## Description
-This repository contains the data files the California Test System (CATS), which is a geographically-accurate, synthetic electric grid model that is located in California. This model was created using publicly available geographic data of California's actual transmission lines, substations, and power plants, which we combined with invented connections and parameters that are "realistic but not real". For more information about how this network model was created, please refer to our publication: [California Test System (CATS): A Geographically Accurate Test System based on the California Grid](https://arxiv.org/abs/2210.04351).
+This repository contains the data files the California Test System (CATS), which is a geographically-accurate, synthetic electric grid model that is located in California. This model was created using publicly available geographic data of California's actual transmission lines, substations, and power plants, which we combined with invented connections and parameters that are "realistic but not real". For more information about how this network model was created, please refer to our publication: [California Test System (CATS): A Geographically Accurate Test System based on the California Grid](https://ieeexplore.ieee.org/document/10337776).
 
 The grid model is available in two formats. The MATPOWER file format is suitable for electric power system simulation and optimization. The geographic information systems (GIS) files, in .GEOJSON and .CSV formats, are suitable for geospatial analyses.
 
@@ -68,14 +68,15 @@ Key files and folders of this repository are described below.
 ## Citation
 If you use this repository, please cite our publication:
 ```
-@misc{CATS2022,
-  doi = {10.48550/ARXIV.2210.04351},
-  url = {https://arxiv.org/abs/2210.04351},
-  author = {Taylor, Sofia and Rangarajan, Aditya and Rhodes, Noah and Snodgrass, Jonathan and Lesieutre, Bernie and Roald, Line A.},
-  title = {California Test System (CATS): A Geographically Accurate Test System based on the California Grid},
-  publisher = {arXiv},
-  year = {2022},
-  copyright = {arXiv.org perpetual, non-exclusive license}
+@article{CATS2024,
+  author={Taylor, Sofia and Rangarajan, Aditya and Rhodes, Noah and Snodgrass, Jonathan and Lesieutre, Bernard C. and Roald, Line A.},
+  journal={IEEE Transactions on Energy Markets, Policy and Regulation}, 
+  title={California Test System (CATS): A Geographically Accurate Test System Based on the California Grid}, 
+  year={2024},
+  volume={2},
+  number={1},
+  pages={107-118},
+  doi={10.1109/TEMPR.2023.3338568}
 }
 ```
 
