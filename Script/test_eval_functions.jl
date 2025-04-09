@@ -8,7 +8,7 @@ function map_buses_to_loads(NetworkData)
     return load_mapping
 end
 
-function update_loads!(k,load_scenarios,NetworkData)
+function update_loads!(k,load_scenarios,load_mapping, NetworkData)
     for i in 1:size(load_scenarios)[1]
         load_split = split(load_scenarios[i,k],"+")
         P = parse(Float64,load_split[1])

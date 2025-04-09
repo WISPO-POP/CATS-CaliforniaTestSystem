@@ -2,7 +2,7 @@ using PowerModels
 using JuMP
 using CSV, JSON
 using DataFrames
-using Gurobi, Ipopt
+using Ipopt
 
 #println(Threads.nthreads())
 # User input
@@ -19,12 +19,12 @@ N = 8760
 solver = Ipopt.Optimizer #JuMP.optimizer_with_attributes(() -> Ipopt.Optimizer(), "print_level" => 1)
 
 include("test_eval_functions.jl")
-load_scenarios = CSV.read("../data/Load_Agg_Post_Assignment_v3_latest.csv",header = false, DataFrame)
+load_scenarios = CSV.read("data/Load_Agg_Post_Assignment_v3_latest.csv",header = false, DataFrame)
 load_scenarios = load_scenarios[:,1:N]
 
-NetworkData = PowerModels.parse_file("../MATPOWER/CaliforniaTestSystem.m")
+NetworkData = PowerModels.parse_file("MATPOWER/CaliforniaTestSystem.m")
 
-gen_data = CSV.read("../GIS/CATS_gens.csv",DataFrame)
+gen_data = CSV.read("GIS/CATS_gens.csv",DataFrame)
 
 PMaxOG = [NetworkData["gen"][string(i)]["pmax"] for i in 1:size(gen_data)[1]]
 println(sum(PMaxOG))
@@ -37,7 +37,7 @@ WindCap = sum(g["pmax"] for (i,g) in NetworkData["gen"] if g["index"] in WindGen
 
 load_mapping = map_buses_to_loads(NetworkData)
 
-HourlyData2019 = CSV.read("../data/HourlyProduction2019.csv",DataFrame)
+HourlyData2019 = CSV.read("data/HourlyProduction2019.csv",DataFrame)
 SolarGeneration = HourlyData2019[1:N,"Solar"]
 WindGeneration = HourlyData2019[1:N,"Wind"]
 
@@ -54,7 +54,7 @@ results = []
         #println(sum(NetworkData["gen"][string(i)]["pmax"] for i in 1:size(gen_data)[1]))
 
         # Change load buses' Pd and Qd for the current scenario
-        update_loads!(k, load_scenarios, NetworkData)
+        update_loads!(k, load_scenarios, load_mapping, NetworkData)
 
         # Run power flow
         solution = PowerModels.solve_opf(NetworkData, ACPPowerModel, solver)
